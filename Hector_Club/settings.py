@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
+    'unfold.contrib.filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'livereload',
     'themes',
+    'easyaudit',
+    'auditlog',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +60,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'livereload.middleware.LiveReloadScript',
+    'easyaudit.middleware.easyaudit.EasyAuditMiddleware',
+    'auditlog.middleware.AuditlogMiddleware',
 ]
+
+# For Django easy audit package
+DJANGO_EASY_AUDIT_WATCH_MODEL_EVENTS = False
+
+DJANGO_EASY_AUDIT_WATCH_AUTH_EVENTS = False
+
+DJANGO_EASY_AUDIT_WATCH_REQUEST_EVENTS = False 
 
 ROOT_URLCONF = 'Hector_Club.urls'
 

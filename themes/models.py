@@ -1,4 +1,5 @@
 from django.db import models
+from auditlog.registry import auditlog
 
 # Create your models here.
 class Registrations(models.Model):
@@ -9,3 +10,5 @@ class Registrations(models.Model):
     
     def __str__(self):
         return self.name
+    
+auditlog.register(Registrations)
