@@ -14,7 +14,7 @@ def index(request):
             client_data = Registrations.objects.create(name=name, email=email, mobile_number=phone, message=message)
             client_data.save()
             subject = "Hector Coding Club"
-            message = f"Dear {name},\nThank You for your registration with Hector Coding Club. We will get back to you as soon as possible. Your registration details are as follows:\nName: {name}\nEmail: {email}\nMobile Number: {phone}\nThis is an automated email.\nPlease keep this email for your records and do not forward or share any other person.\nTo get started, please visit our website at https://hectorcodingclub.pythonanywhere.com/ and use our services.\nBest regards,\nHector Coding Club"
+            message = f"Dear {name},\nThank You for your registration with Hector Coding Club. We will get back to you as soon as possible. Your registration details are as follows:\nName: {name}\nEmail: {email}\nMobile Number: {phone}\nThis is an automated email.\nPlease keep this email for your records and do not forward or share any other person.\nTo get started, please visit our website at https://hectorclub.pythonanywhere.com/ and use our services.\nBest regards,\nHector Coding Club"
             recipient = email
             send_mail(
                 subject,
